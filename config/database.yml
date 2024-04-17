@@ -79,6 +79,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %> 
   database: dental_scheduler_api_production
   username: dental_scheduler_api
   password: <%= ENV["DENTAL_SCHEDULER_API_DATABASE_PASSWORD"] %>
