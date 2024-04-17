@@ -13,6 +13,11 @@ services:
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
+      envVars:
+        - key: DATABASE_URL
+          fromDatabase:
+            name: scheduler-backend
+            property: connectionString 
       - key: secret_key_base
         value: ab54e63758278d335930d8960ff5ebb545ea74e05dc22f1ac0cd2110b99a4355c2403d44ab9d237fcab48cc802a0393d91311cc93e5f309bfeff7bd31d78e388
       - key: devise_jwt_secret_key
