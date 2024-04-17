@@ -1,7 +1,7 @@
 databases:
-  - name: scheduler-backend
-    databaseName: scheduler-backend
-    user: tylersangster
+  - name: dental_scheduler_api_production
+    databaseName: dental_scheduler_api_production
+    user: dental_scheduler_api
     plan: free
 
 services:
@@ -14,9 +14,9 @@ services:
     startCommand: "bundle exec rails server"
     envVars:
       envVars:
-        - key: DATABASE_URL
+        - key: postgres://dental_scheduler_api:rmu13YLwIwMtl7MolBlywoZiLkMTby1U@dpg-cog2ehol5elc73bg5otg-a/dental_scheduler_api_production
           fromDatabase:
-            name: scheduler-backend
+            name: dental_scheduler_api_production
             property: connectionString 
       - key: secret_key_base
         value: ab54e63758278d335930d8960ff5ebb545ea74e05dc22f1ac0cd2110b99a4355c2403d44ab9d237fcab48cc802a0393d91311cc93e5f309bfeff7bd31d78e388
