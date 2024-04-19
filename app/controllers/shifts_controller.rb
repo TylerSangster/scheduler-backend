@@ -1,5 +1,5 @@
 class ShiftsController < ApplicationController
-  before_action :set_shift, only: [:show, update, destroy]
+  before_action :set_shift, only: [:show, :update, :destroy]
 
   # GET /shifts
   def index
