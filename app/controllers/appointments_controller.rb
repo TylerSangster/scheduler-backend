@@ -42,7 +42,13 @@ class AppointmentsController < ApplicationController
       @appointment = Appointment.find(params[:id])
     end
 
-    def appointment_params
-      params.require(:appointment).permit(:date, :time, :patient_id, :staff_id)
+    def appointment_params    "title": null,
+    "notes": null,
+    "start_time": null,
+    "end_time": null,
+    "patient_id": null,
+    "staff_id": null,
+    "shift_id": null,
+      params.require(:appointment).permit(:title, :notes, :type, :start_time, :end_time, :patient_id, :staff_id, :shift_id)
     end
 end
