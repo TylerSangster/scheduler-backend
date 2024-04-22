@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  # before_action :authorize_request, except: :create
   before_action :set_appointment, only: [:show, :update, :destroy]
 
   # GET /appointments
